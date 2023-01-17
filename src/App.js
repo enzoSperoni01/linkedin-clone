@@ -1,9 +1,11 @@
+import Header from "./Header";
+
 function App() {
   return (
     <div className="app">
-      <h1>Lets build a Linkedin Clone</h1>
-
       {/* Header */}
+      <Header />
+
       {/* App Body */}
         {/* Sidebar */}
         {/* Feed */}
