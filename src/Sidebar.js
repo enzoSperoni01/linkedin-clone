@@ -35,15 +35,9 @@ function Sidebar() {
 
             <div className='sidebar__bottom'>
                 <p>Recent</p>
-                {
-                    recentItem('reactjs')
-                }
-                {
-                    recentItem('javascript')
-                }
-                {
-                    recentItem('software')
-                }
+                { recentItem('reactjs') }
+                { recentItem('javascript') }
+                { recentItem('software') }
             </div>
         </div>
     )
