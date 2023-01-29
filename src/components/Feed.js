@@ -8,7 +8,7 @@ import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 import firebase from "firebase/compat/app"
-import { db } from './firebase.js';
+import { db } from '../firebase';
 
 function Feed() {
     const [ input, setInput ] = useState('');

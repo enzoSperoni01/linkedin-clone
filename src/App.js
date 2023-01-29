@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from "./Header";
-import Sidebar from './Sidebar';
-import Feed from "./Feed";
+import Header from "./components/Header";
+import Sidebar from './components/Sidebar';
+import Feed from "./components/Feed";
+import Login from './components/Login';
 import './App.css';
 import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
-import Login from './Login';
 
 function App() {
   const user = useSelector(selectUser); 
