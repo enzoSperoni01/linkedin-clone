@@ -7,8 +7,18 @@ import SupervisorAccount from '@mui/icons-material/SupervisorAccount';
 import BusinessCenter from '@mui/icons-material/BusinessCenter';
 import Chat from '@mui/icons-material/Chat';
 import Notifications from '@mui/icons-material/Notifications';
+import { useDispatch, useSelector } from 'react-redux';
+import { auth } from '../firebase.js';
+import { logout, selectUser } from '../features/userSlice.js';
 
 export default function Header() {
+    const user = useSelector(selectUser);
+    const dispatch = useDispatch();
+    const logoutOfApp = () => {
+        dispatch(logout())
+        auth.signOut();
+    } 
+
     return (
         <div className='header'>
             <div className='header__left'>
@@ -28,7 +38,11 @@ export default function Header() {
                 <HeaderOption Icon={BusinessCenter} title="Jobs"/>
                 <HeaderOption Icon={Chat} title="Messaging"/>
                 <HeaderOption Icon={Notifications} title="Notifications"/>
-                <HeaderOption avatar="./assets/testigo.png" title="Me" name="Enzo" />
+                <HeaderOption 
+                    avatar={user.email[0]}
+                    title="Me" 
+                    onClick={logoutOfApp}
+                />
             </div>
         </div>
     )
