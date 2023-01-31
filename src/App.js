@@ -1,14 +1,24 @@
+// React
 import React, { useEffect } from 'react';
+
+// Components
 import Header from "./components/Header";
 import Sidebar from './components/Sidebar';
 import Feed from "./components/Feed";
 import Login from './components/Login';
-import './App.css';
+import Widgets from './components/Widgets';
+
+// Redux
 import { useDispatch, useSelector } from 'react-redux';
+
+// Firebase
 import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './firebase';
 
-function App() {
+// CSS
+import './App.css';
+
+const App = () => {
   const user = useSelector(selectUser); 
   const dispatch = useDispatch();
 
@@ -38,7 +48,7 @@ function App() {
           <div className="app__body">
               <Sidebar />
               <Feed />
-              {/* Widgets */}
+              <Widgets />
           </div>
         </>
       )}
